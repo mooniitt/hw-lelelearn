@@ -2,9 +2,9 @@ import router from '@ohos.router';
 import { LESSONS } from '../model/LessonData';
 import { Lesson, Question, QuestionFillInBlank, QuestionMultipleChoice } from '../model/Lesson';
 import { progressService } from '../model/ProgressService';
+import prompt from '@ohos.promptAction';
 
-// Define interface for router parameters
-interface RouterParams {
+interface LessonPageParams {
   lessonId: string;
 }
 
@@ -19,7 +19,7 @@ struct LessonPage {
   @State score: number = 0;
 
   aboutToAppear() {
-    const params = router.getParams() as RouterParams;
+    const params = router.getParams() as LessonPageParams;
     if (params && params.lessonId) {
       this.lesson = LESSONS.find(l => l.id === parseInt(params.lessonId)) || null;
     }
@@ -38,6 +38,20 @@ struct LessonPage {
 
     if (this.isCorrect) {
       this.score++;
+    } else {
+      // Decrement life on wrong answer
+      progressService.decrementLife();
+      // Check for game over
+      if (progressService.lives <= 0) {
+        prompt.showToast({
+          message: 'You have run out of lives!',
+          duration: 2000
+        });
+        // Navigate back after a short delay
+        setTimeout(() => {
+          router.back();
+        }, 2000);
+      }
     }
   }
 
@@ -103,13 +117,29 @@ struct LessonPage {
   }
 
   @Builder
-  QuestionContent() {
+  LessonContent() {
     if (this.lesson) {
       // Header
-      Text(this.lesson.title)
-        .fontSize(20)
-        .fontWeight(FontWeight.Bold)
-        .padding({ top: 40, bottom: 10 })
+      Row() {
+        Text(this.lesson.title)
+          .fontSize(20)
+          .fontWeight(FontWeight.Bold)
+        
+        Blank()
+        
+        Row({ space: 5 }) {
+          Image($r('app.media.startIcon')).width(24).height(24).fillColor(Color.Red)
+          Text(`${progressService.lives}`)
+            .fontSize(20)
+            .fontWeight(FontWeight.Bold)
+            .fontColor(Color.Red)
+        }
+      }
+      .width('100%')
+      .height(60)
+      .padding({ left: 20, right: 20 })
+      .backgroundColor(Color.White)
+      .shadow({ radius: 5, color: '#e0e0e0', offsetY: 2 })
 
       // Progress Bar
       Progress({
@@ -118,7 +148,7 @@ struct LessonPage {
         type: ProgressType.Linear
       })
         .width('90%')
-        .padding({ bottom: 20 })
+        .padding({ top: 10, bottom: 20 })
 
       // Question Area
       Column() {
@@ -133,7 +163,7 @@ struct LessonPage {
       // Footer (Check/Next Button and Feedback)
       Column() {
         if (this.isCorrect !== null) {
-          Text(this.isCorrect ? 'Correct!' : this.getCorrectAnswerText())
+          Text(this.getFeedbackText())
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .fontColor(this.isCorrect ? Color.Green : Color.Red)
@@ -154,24 +184,25 @@ struct LessonPage {
           .enabled(this.isCorrect !== null || this.selectedOption !== null || this.fillInBlankAnswer !== '')
 
       }.height(120)
+
     } else {
       Text('Lesson not found.').fontSize(20).padding(20)
     }
   }
 
-  build() {
-    Column() {
-      this.QuestionContent()
-    }
-    .width('100%')
-    .height('100%')
-  }
-
-  getCorrectAnswerText(): string {
+  getFeedbackText(): string {
     if (!this.lesson) return '';
     const question = this.lesson.questions[this.currentQuestionIndex];
     const correctAnswer = question.type === 'multiple-choice' ? question.answer : (question as QuestionFillInBlank).answer;
-    return `Correct answer: ${correctAnswer}`;
+    return this.isCorrect ? 'Correct!' : `Correct answer: ${correctAnswer}`;
+  }
+
+  build() {
+    Column() {
+      this.LessonContent()
+    }
+    .width('100%')
+    .height('100%')
   }
 
   getOptionColor(option: string, question: QuestionMultipleChoice): Color {

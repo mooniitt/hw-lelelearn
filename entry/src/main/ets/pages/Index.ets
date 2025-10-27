@@ -2,8 +2,8 @@ import router from '@ohos.router';
 import { LESSONS } from '../model/LessonData';
 import { Lesson } from '../model/Lesson';
 import { progressService } from '../model/ProgressService';
-import common from '@ohos.app.ability.common';
 import { Context } from '@kit.AbilityKit';
+import common from '@ohos.app.ability.common';
 
 @Entry
 @Component
@@ -75,4 +75,3 @@ struct Index {
     .backgroundColor('#f5f5f5')
   }
 }
-
