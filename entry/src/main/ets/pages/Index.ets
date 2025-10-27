@@ -1,18 +1,20 @@
 import router from '@ohos.router';
-import { LESSONS } from '../model/LessonData';
 import { Lesson } from '../model/Lesson';
 import { progressService } from '../model/ProgressService';
 import { Context } from '@kit.AbilityKit';
 import common from '@ohos.app.ability.common';
+import { lessonService } from '../model/LessonService';
 
 @Entry
 @Component
 struct Index {
   context: Context = getContext(this);
 
-  aboutToAppear() {
+  async aboutToAppear() {
     if (this.context) {
-      progressService.initialize(this.context as common.UIAbilityContext);
+      await progressService.initialize(this.context as common.UIAbilityContext);
+      await lessonService.loadLessons(this.context as common.UIAbilityContext);
+      progressService.regenerateLives();
     }
   }
 
@@ -56,13 +58,26 @@ struct Index {
 
   build() {
     Column() {
-      Text('LeLeLearn')
-        .fontSize(32)
-        .fontWeight(FontWeight.Bold)
-        .padding(20)
+      Row() {
+        Text('LeLeLearn')
+          .fontSize(32)
+          .fontWeight(FontWeight.Bold)
+
+        Blank()
+
+        Row({ space: 5 }) {
+          Image($r('app.media.startIcon')).width(24).height(24).fillColor(Color.Red)
+          Text(`${progressService.lives}`)
+            .fontSize(20)
+            .fontWeight(FontWeight.Bold)
+            .fontColor(Color.Red)
+        }
+      }
+      .width('100%')
+      .padding(20)
 
       List({ space: 10 }) {
-        ForEach(LESSONS, (lesson: Lesson) => {
+        ForEach(lessonService.getLessons(), (lesson: Lesson) => {
           this.LessonRow(lesson)
         })
       }

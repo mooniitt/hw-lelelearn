@@ -1,8 +1,10 @@
 import router from '@ohos.router';
-import { LESSONS } from '../model/LessonData';
 import { Lesson, Question, QuestionFillInBlank, QuestionMultipleChoice } from '../model/Lesson';
 import { progressService } from '../model/ProgressService';
 import prompt from '@ohos.promptAction';
+import { lessonService } from '../model/LessonService';
+import { Context } from '@kit.AbilityKit';
+import common from '@ohos.app.ability.common';
 
 interface LessonPageParams {
   lessonId: string;
@@ -17,11 +19,17 @@ struct LessonPage {
   @State fillInBlankAnswer: string = ''; // State for the text input
   @State isCorrect: boolean | null = null;
   @State score: number = 0;
+  context: Context = getContext(this);
 
-  aboutToAppear() {
+  async aboutToAppear() {
+    // Ensure lessons are loaded
+    if (lessonService.getLessons().length === 0 && this.context) {
+      await lessonService.loadLessons(this.context as common.UIAbilityContext);
+    }
+    
     const params = router.getParams() as LessonPageParams;
     if (params && params.lessonId) {
-      this.lesson = LESSONS.find(l => l.id === parseInt(params.lessonId)) || null;
+      this.lesson = lessonService.getLesson(parseInt(params.lessonId));
     }
   }
 
