@@ -2,30 +2,46 @@ import { Lesson } from './Lesson';
 import resourceManager from '@ohos.resourceManager';
 import common from '@ohos.app.ability.common';
 
+function utf8ArrayToString(array: Uint8Array): string {
+  let out = '';
+  let i = 0;
+  while (i < array.length) {
+    const c = array[i++];
+    if (c >> 7 === 0) {
+      out += String.fromCharCode(c);
+    } else if (c >> 5 === 0x6) {
+      const c2 = array[i++];
+      out += String.fromCharCode(((c & 0x1f) << 6) | (c2 & 0x3f));
+    } else if (c >> 4 === 0xe) {
+      const c2 = array[i++];
+      const c3 = array[i++];
+      out += String.fromCharCode(((c & 0x0f) << 12) | ((c2 & 0x3f) << 6) | (c3 & 0x3f));
+    }
+  }
+  return out;
+}
+
+
 @Observed
 class LessonService {
   public lessons: Lesson[] = [];
 
-  async loadLessons(context: common.UIAbilityContext) {
-    if (this.lessons.length > 0) {
-      return;
-    }
+async loadLessons(context: common.UIAbilityContext) {
+    if (this.lessons.length > 0) return
 
     try {
-      const resourceMgr = context.resourceManager;
-      const rawFile = await resourceMgr.getRawFileContent('lessons.json');
-      // Convert Uint8Array to string without using apply
-      const uint8Array: Uint8Array = new Uint8Array(rawFile);
-      let jsonString: string = '';
-      for (let i = 0; i < uint8Array.length; i++) {
-        jsonString += String.fromCharCode(uint8Array[i]);
-      }
-      this.lessons = JSON.parse(jsonString) as Lesson[];
-      console.log('LeLeLearn: Lessons loaded successfully.');
+      const resourceMgr = context.resourceManager
+      const rawFile: Uint8Array = await resourceMgr.getRawFileContent('lessons.json') as Uint8Array
+
+      // ✅ 使用上面定义的 UTF-8 解码函数
+      const jsonString: string = utf8ArrayToString(rawFile)
+      this.lessons = JSON.parse(jsonString) as Lesson[]
+      console.log('LeLeLearn: Lessons loaded successfully.')
     } catch (e) {
-      console.error(`LeLeLearn: Failed to load lessons. Code: ${e.code}, Message: ${e.message}`);
+      console.error(`LeLeLearn: Failed to load lessons. Code: ${e.code}, Message: ${e.message}`)
     }
   }
+
 
   getLessons(): Lesson[] {
     return this.lessons;
