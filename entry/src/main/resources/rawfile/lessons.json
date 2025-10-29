@@ -6,13 +6,13 @@
     "questions": [
       {
         "type": "multiple-choice",
-        "prompt": "Which one is 'Hello' ચ?",
+        "prompt": "Which one is 'Hello'?",
         "options": ["你好", "再见", "谢谢", "不客气"],
         "answer": "你好"
       },
       {
         "type": "multiple-choice",
-        "prompt": "Which one is 'Goodbye' ચ?",
+        "prompt": "Which one is 'Goodbye'?",
         "options": ["你好", "再见", "谢谢", "不客气"],
         "answer": "再见"
       }
@@ -25,13 +25,13 @@
     "questions": [
       {
         "type": "multiple-choice",
-        "prompt": "Which one is 'One' ચ?",
+        "prompt": "Which one is 'One'?",
         "options": ["一", "二", "三", "四"],
         "answer": "一"
       },
       {
         "type": "multiple-choice",
-        "prompt": "Which one is 'Two' ચ?",
+        "prompt": "Which one is 'Two'?",
         "options": ["一", "二", "三", "四"],
         "answer": "二"
       }
@@ -70,6 +70,114 @@
         "type": "fill-in-the-blank",
         "promptParts": ["I drink ", null, " every morning."],
         "answer": "milk"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Lesson 5: Colors",
+    "description": "Learn basic colors.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Red'?",
+        "options": ["红色", "蓝色", "绿色", "黄色"],
+        "answer": "红色"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["The color of the sky is ", null, "."],
+        "answer": "blue"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Lesson 6: Days of the week",
+    "description": "Learn the days of the week.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Monday'?",
+        "options": ["星期一", "星期二", "星期三", "星期四"],
+        "answer": "星期一"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["There are ", null, " days in a week."],
+        "answer": "seven"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Lesson 7: Animals",
+    "description": "Learn basic animal names.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Cat'?",
+        "options": ["猫", "狗", "鸟", "鱼"],
+        "answer": "猫"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["A dog says ", null, "."],
+        "answer": "woof"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Lesson 8: Family",
+    "description": "Learn basic family vocabulary.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Mother'?",
+        "options": ["妈妈", "爸爸", "哥哥", "姐姐"],
+        "answer": "妈妈"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["My father's son is my ", null, "."],
+        "answer": "brother"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Lesson 9: Body Parts",
+    "description": "Learn basic body parts.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Hand'?",
+        "options": ["手", "脚", "头", "眼睛"],
+        "answer": "手"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["You can see with your ", null, "."],
+        "answer": "eyes"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Lesson 10: Clothes",
+    "description": "Learn basic clothing items.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Shirt'?",
+        "options": ["衬衫", "裤子", "裙子", "鞋子"],
+        "answer": "衬衫"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["You wear ", null, " on your feet."],
+        "answer": "shoes"
       }
     ]
   }
