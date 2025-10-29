@@ -59,7 +59,7 @@ struct Index {
   build() {
     Column() {
       Row() {
-        Text('LeLeLearn')
+        Text('乐乐学')
           .fontSize(32)
           .fontWeight(FontWeight.Bold)
 
