@@ -61,6 +61,7 @@ struct Index {
       Row() {
         Text('乐乐学')
           .fontSize(32)
+          .fontColor('#02667b')
           .fontWeight(FontWeight.Bold)
 
         Blank()

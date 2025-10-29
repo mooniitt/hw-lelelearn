@@ -180,5 +180,365 @@
         "answer": "shoes"
       }
     ]
+  },
+  {
+    "id": 11,
+    "title": "Lesson 11: Weather",
+    "description": "Learn basic weather words.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one means 'Sunny'?",
+        "options": ["晴天", "雨天", "雪天", "阴天"],
+        "answer": "晴天"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["It is ", null, " when it rains."],
+        "answer": "wet"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Lesson 12: Feelings",
+    "description": "Learn basic feelings and emotions.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Happy'?",
+        "options": ["高兴的", "伤心的", "生气的", "害怕的"],
+        "answer": "高兴的"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["I feel ", null, " when I get a gift."],
+        "answer": "happy"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Lesson 13: Time",
+    "description": "Learn to talk about time.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one means 'Morning'?",
+        "options": ["早上", "下午", "晚上", "中午"],
+        "answer": "早上"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["I eat breakfast in the ", null, "."],
+        "answer": "morning"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Lesson 14: School",
+    "description": "Learn school-related words.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Teacher'?",
+        "options": ["老师", "学生", "校长", "工人"],
+        "answer": "老师"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["We study in a ", null, "."],
+        "answer": "school"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Lesson 15: Transportation",
+    "description": "Learn basic transportation words.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Car'?",
+        "options": ["汽车", "飞机", "火车", "船"],
+        "answer": "汽车"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["I go to school by ", null, "."],
+        "answer": "bus"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Lesson 16: House",
+    "description": "Learn parts of a house.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Kitchen'?",
+        "options": ["厨房", "卧室", "客厅", "浴室"],
+        "answer": "厨房"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["I sleep in the ", null, "."],
+        "answer": "bedroom"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Lesson 17: Jobs",
+    "description": "Learn job-related words.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Doctor'?",
+        "options": ["医生", "警察", "老师", "司机"],
+        "answer": "医生"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["A teacher works in a ", null, "."],
+        "answer": "school"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Lesson 18: Sports",
+    "description": "Learn sports words.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Football'?",
+        "options": ["足球", "篮球", "网球", "乒乓球"],
+        "answer": "足球"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["I can play ", null, " with my friends."],
+        "answer": "basketball"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Lesson 19: Nature",
+    "description": "Learn words about nature.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Tree'?",
+        "options": ["树", "花", "草", "山"],
+        "answer": "树"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["The sun is in the ", null, "."],
+        "answer": "sky"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Lesson 20: Shapes",
+    "description": "Learn basic shapes.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Circle'?",
+        "options": ["圆形", "方形", "三角形", "长方形"],
+        "answer": "圆形"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["A ball is ", null, " in shape."],
+        "answer": "round"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Lesson 21: Fruits",
+    "description": "Learn fruit names.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Banana'?",
+        "options": ["香蕉", "苹果", "西瓜", "葡萄"],
+        "answer": "香蕉"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["A ", null, " is yellow."],
+        "answer": "banana"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Lesson 22: Vegetables",
+    "description": "Learn vegetable names.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Carrot'?",
+        "options": ["胡萝卜", "土豆", "西红柿", "黄瓜"],
+        "answer": "胡萝卜"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["A carrot is ", null, "."],
+        "answer": "orange"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Lesson 23: Actions",
+    "description": "Learn basic verbs.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one means 'Run'?",
+        "options": ["跑", "走", "跳", "坐"],
+        "answer": "跑"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["I can ", null, " very fast."],
+        "answer": "run"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Lesson 24: Directions",
+    "description": "Learn direction words.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Left'?",
+        "options": ["左", "右", "前", "后"],
+        "answer": "左"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["Turn ", null, " at the corner."],
+        "answer": "left"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Lesson 25: Furniture",
+    "description": "Learn names of furniture.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Table'?",
+        "options": ["桌子", "椅子", "沙发", "床"],
+        "answer": "桌子"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["We sit on a ", null, "."],
+        "answer": "chair"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Lesson 26: Technology",
+    "description": "Learn basic tech vocabulary.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Computer'?",
+        "options": ["电脑", "手机", "电视", "平板"],
+        "answer": "电脑"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["I type on a ", null, "."],
+        "answer": "keyboard"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Lesson 27: Seasons",
+    "description": "Learn the four seasons.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Winter'?",
+        "options": ["冬天", "春天", "夏天", "秋天"],
+        "answer": "冬天"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["It snows in ", null, "."],
+        "answer": "winter"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Lesson 28: Holidays",
+    "description": "Learn about common holidays.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Christmas'?",
+        "options": ["圣诞节", "春节", "中秋节", "端午节"],
+        "answer": "圣诞节"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["We decorate a ", null, " at Christmas."],
+        "answer": "tree"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Lesson 29: Countries",
+    "description": "Learn country names.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'China'?",
+        "options": ["中国", "美国", "英国", "日本"],
+        "answer": "中国"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["I live in ", null, "."],
+        "answer": "China"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Lesson 30: Hobbies",
+    "description": "Learn about hobbies.",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "prompt": "Which one is 'Read books'?",
+        "options": ["看书", "画画", "唱歌", "跳舞"],
+        "answer": "看书"
+      },
+      {
+        "type": "fill-in-the-blank",
+        "promptParts": ["My hobby is ", null, "."],
+        "answer": "reading"
+      }
+    ]
   }
 ]
