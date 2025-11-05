@@ -8,12 +8,14 @@ import { lessonService } from '../model/LessonService';
 @Entry
 @Component
 struct Index {
+  @State lessons: Lesson[] = [];
   context: Context = getContext(this);
 
   async aboutToAppear() {
     if (this.context) {
       await progressService.initialize(this.context as common.UIAbilityContext);
       await lessonService.loadLessons(this.context as common.UIAbilityContext);
+      this.lessons = lessonService.getLessons();
       progressService.regenerateLives();
     }
   }
@@ -78,7 +80,7 @@ struct Index {
       .padding(20)
 
       List({ space: 10 }) {
-        ForEach(lessonService.getLessons(), (lesson: Lesson) => {
+        ForEach(this.lessons, (lesson: Lesson) => {
           this.LessonRow(lesson)
         })
       }
